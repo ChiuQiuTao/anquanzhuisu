@@ -2,7 +2,7 @@
   <div class="advics">
     <adviced></adviced>
     <div class="dates">
-      <!-- <thead>fdsf</thead> -->
+      <!-- <thead>fdsf</thead>aaaaa -->
       <table border="0">
         <tr>
           <th>编号</th>
@@ -30,46 +30,46 @@
   </div>
 </template>
 <script>
-import adviced from "./component/expertAdvice-search/expertAdvice-search";
-import advicedpage from "@/components/page/page";
-import "./index.less";
+import adviced from './component/expertAdvice-search/expertAdvice-search'
+import advicedpage from '@/components/page/page'
+import './index.less'
 export default {
-  name: "advice",
-  data() {
+  name: 'advice',
+  data () {
     return {
       advicslist: [
         {
-          b: "01",
-          x: "水稻增产建议",
+          b: '01',
+          x: '水稻增产建议',
           l:
-            "建议使用农科院新品种水稻518，其具备亩产高、抗虫、防倒伏分身乏术发顺丰",
-          ly: "2018-10-21,10:00",
-          dh: "郭大侠"
+            '建议使用农科院新品种水稻518，其具备亩产高、抗虫、防倒伏分身乏术发顺丰',
+          ly: '2018-10-21,10:00',
+          dh: '郭大侠'
         },
         {
-          b: "01",
-          x: "水稻增产建议",
+          b: '01',
+          x: '水稻增产建议',
           l:
-            "建议使用农科院新品种水稻518，其具备亩产高、抗虫、防倒伏分身乏术发顺丰",
-          ly: "2018-10-21,10:00",
-          dh: "郭大侠"
+            '建议使用农科院新品种水稻518，其具备亩产高、抗虫、防倒伏分身乏术发顺丰',
+          ly: '2018-10-21,10:00',
+          dh: '郭大侠'
         },
         {
-          b: "01",
-          x: "水稻增产建议",
+          b: '01',
+          x: '水稻增产建议',
           l:
-            "建议使用农科院新品种水稻518，其具备亩产高、抗虫、防倒伏分身乏术发顺丰",
-          ly: "2018-10-21,10:00",
-          dh: "郭大侠"
+            '建议使用农科院新品种水稻518，其具备亩产高、抗虫、防倒伏分身乏术发顺丰',
+          ly: '2018-10-21,10:00',
+          dh: '郭大侠'
         }
       ]
-    };
+    }
   },
   components: {
     adviced,
     advicedpage
   }
-};
+}
 </script>
 <style lang="less">
 .advics {
@@ -85,4 +85,3 @@ export default {
   margin: 0 auto;
 }
 </style>
-
