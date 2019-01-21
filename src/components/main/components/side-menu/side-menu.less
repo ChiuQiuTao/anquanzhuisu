@@ -1,0 +1,68 @@
+.side-menu-wrapper {
+    user-select: none;
+    .ivu-menu-dark {
+        background: #c81623;
+        border-top: 1px solid #ac151a;
+        border-bottom: 1px solid #ac151a;
+        width: auto;
+        height: 460px;
+        overflow: scroll;
+        overflow-x: hidden;
+    }
+    .ivu-menu-dark:hover {
+        background: #c81623;
+    }
+    .ivu-menu-dark.ivu-menu-vertical .ivu-menu-item,
+    .ivu-menu-dark.ivu-menu-vertical .ivu-menu-submenu-title {
+        border-bottom: 1px solid #931321;
+    }
+    .ivu-menu-dark.ivu-menu-vertical .ivu-menu-opened .ivu-menu-submenu-title {
+        background: #c81623;
+        border-top: 1px solid #931321;
+    }
+    .ivu-menu-dark.ivu-menu-vertical .ivu-menu-submenu .ivu-menu-item-active,
+    .ivu-menu-dark.ivu-menu-vertical .ivu-menu-submenu .ivu-menu-item-active:hover {
+        background: #470912 !important;
+    }
+    .ivu-menu-dark.ivu-menu-vertical .ivu-menu-opened {
+        background: #671021 !important;
+    }
+    .ivu-menu-item {
+        border-top: 1px solid #931321;
+    }
+    .menu-collapsed {
+        padding-top: 10px;
+        .ivu-dropdown {
+            width: 100%;
+            .ivu-dropdown-rel a {
+                width: 100%;
+            }
+        }
+        .ivu-tooltip {
+            width: 100%;
+            .ivu-tooltip-rel {
+                width: 100%;
+            }
+            .ivu-tooltip-popper .ivu-tooltip-content {
+                .ivu-tooltip-arrow {
+                    border-right-color: #fff;
+                }
+                .ivu-tooltip-inner {
+                    background: #fff;
+                    color: #495060;
+                }
+            }
+        }
+    }
+    a.drop-menu-a {
+        display: inline-block;
+        padding: 6px 15px;
+        width: 100%;
+        text-align: center;
+        color: #495060;
+    }
+}
+
+.menu-title {
+    padding-left: 6px;
+}

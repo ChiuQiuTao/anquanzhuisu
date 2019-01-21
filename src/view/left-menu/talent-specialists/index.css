@@ -1,0 +1,15 @@
+.dates table {
+  border: 1px solid #f6f6f7;
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+.dates table tr {
+  height: 50px;
+  border-top: 1px solid #f6f6f7;
+  text-align: center;
+}
+.dates table tr td button {
+  padding: 3px 7px;
+  cursor: pointer;
+}

@@ -1,0 +1,55 @@
+.expert-search {
+  background-color: #fff;
+  height: auto;
+  width: auto;
+}
+.expert-search .search-title {
+  background-color: #c81623;
+  padding: 15px 0;
+  padding-left: 35px;
+  color: #fff;
+  font-size: 12px;
+}
+.expert-search .type {
+  height: auto;
+  padding-bottom: 18px;
+}
+.expert-search .type .type-title {
+  height: 25px;
+  float: left;
+  line-height: 25px;
+  padding-left: 35px;
+}
+.expert-search .type .type-select {
+  height: 25px;
+  float: left;
+  padding-left: 35px;
+}
+.expert-search .type .type-select .type-select-c {
+  height: 25px !important;
+}
+.expert-search .type .type-select .type-select-c /deep/ div {
+  height: 25px !important;
+  line-height: 25px !important;
+}
+.expert-search .type .type-select .type-select-c /deep/ span {
+  height: 25px !important;
+  line-height: 25px !important;
+}
+.expert-search .type .type-select .type-select-c /deep/ input {
+  height: 25px !important;
+  line-height: 25px !important;
+  width: 150px;
+}
+.expert-search .type .type-select .type-select-c .ivu-select-dropdown {
+  height: auto !important;
+  line-height: 25px !important;
+}
+.expert-search .type .type-btn .type-btn-c {
+  padding: 0 15px;
+  margin-left: 35px;
+  background-color: #ff0000;
+  border-radius: 15px;
+  line-height: 23px;
+  border: #ff0000;
+}
