@@ -1,0 +1,52 @@
+.type-btn-c:hover{
+    opacity: 0.7 !important;
+    cursor:pointer; 
+}
+
+button:hover{
+    opacity: 0.7 !important;
+    cursor:pointer; 
+}
+.btns>.item:hover{
+    opacity: 0.7 !important;
+    cursor:pointer; 
+}
+.project-btn li:hover{
+    opacity: 0.7 !important;
+    cursor:pointer; 
+}
+.type-btn-c:active{
+    opacity: 0.7 !important;
+    cursor:pointer; 
+    transform:scale(0.9);
+    -ms-transform:rotate(0.9); 	/* IE 9 */
+    -moz-transform:rotate(0.9); 	/* Firefox */
+    -webkit-transform:rotate(0.9); /* Safari 和 Chrome */
+    -o-transform:rotate(0.9); 	/* Opera */
+}
+
+button:active{
+    opacity: 0.7 !important;
+    cursor:pointer; 
+    transform:scale(0.9);
+    -ms-transform:rotate(0.9); 	/* IE 9 */
+    -moz-transform:rotate(0.9); 	/* Firefox */
+    -webkit-transform:rotate(0.9); /* Safari 和 Chrome */
+    -o-transform:rotate(0.9); 	/* Opera */
+}
+.btns>.item:active{
+    cursor:pointer; 
+    transform:scale(0.9);
+    -ms-transform:rotate(0.9); 	/* IE 9 */
+    -moz-transform:rotate(0.9); 	/* Firefox */
+    -webkit-transform:rotate(0.9); /* Safari 和 Chrome */
+    -o-transform:rotate(0.9); 	/* Opera */
+}
+.project-btn li:active{
+    cursor:pointer; 
+    transform:scale(0.9);
+    -ms-transform:rotate(0.9); 	/* IE 9 */
+    -moz-transform:rotate(0.9); 	/* Firefox */
+    -webkit-transform:rotate(0.9); /* Safari 和 Chrome */
+    -o-transform:rotate(0.9); 	/* Opera */
+}

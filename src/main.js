@@ -12,6 +12,8 @@ import 'iview/dist/styles/iview.css'
 import './index.less'
 import iView from 'iview'
 import '@/assets/icons/iconfont.css'
+import '@/assets/css/btn-active.css'
+
 // 实际打包时应该不引入mock
 /* eslint-disable */
 if (process.env.NODE_ENV !== 'production') require('@/mock')

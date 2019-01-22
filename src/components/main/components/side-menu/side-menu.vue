@@ -10,6 +10,7 @@
       :accordion="accordion"
       :theme="theme"
       width="auto"
+      v-bind:style="{ height: myHeight}"
       @on-select="handleSelect"
     >
       <template v-for="item in menuList">
@@ -71,6 +72,7 @@
   </div>
 </template>
 <script>
+import bus from "@/api/bus.js";
 import SideMenuItem from "./side-menu-item.vue";
 import CollapsedMenu from "./collapsed-menu.vue";
 import { getUnion } from "@/libs/tools";
@@ -117,7 +119,9 @@ export default {
   },
   data() {
     return {
-      openedNames: []
+      openedNames: [],
+      myHeight: (window.innerHeight - 159) + 'px'
+
     };
   },
   methods: {
@@ -159,6 +163,20 @@ export default {
     }
   },
   mounted() {
+    var _this = this;
+    bus.$on("myHeight", function(re) {
+      _this.myHeight = re-16;
+      _this.myHeight = _this.myHeight + 'px'
+      console.log("_this.myHeight1111111");
+      console.log(_this.myHeight);
+    });
+    //  window.onresize = function windowResize () {
+    //     _this.myHeight = (window.innerHeight - 159) + 'px';
+    //     console.log(_this.myHeight);
+        
+    //     console.log('side');
+    // }
+
     this.openedNames = getUnion(
       this.openedNames,
       this.getOpenedNamesByActiveName(name)
