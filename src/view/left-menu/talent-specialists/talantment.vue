@@ -34,6 +34,7 @@
   </div>
 </template>
 <script>
+import { mapMutations, mapActions, mapGetters } from "vuex";
 import talants from "./component/expert-search/expert-search";
 import tablepages from "@/components/page/page";
 import "./index.less";
