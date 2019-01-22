@@ -52,7 +52,7 @@ export default {
 }
 .login-diary-header{
   padding: 0 17px;
-  margin-top: 22px;
+  padding-top: 22px;
 }
 .echart{
   padding: 0 17px;

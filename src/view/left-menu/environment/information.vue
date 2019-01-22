@@ -1,7 +1,7 @@
 <template>
   <div class="real" style="background-color:#fff">
     <!-- <navwork :navArray='navArray' :navIndex='navIndex'></navwork> -->
-    <div class="table" style="margin:22px 55px;">
+    <div class="table" style="padding :17px;">
       <searchCompany></searchCompany>
       <div class="project-form" style="margin-top:22px">
         <ul>
@@ -87,7 +87,6 @@ export default {
       justify-content: start;
       align-items: center;
       flex-wrap: wrap;
-      margin: 20px 0 10px 20px;
       li {
         list-style: none;
         color: #ffffff;
@@ -106,7 +105,7 @@ export default {
   }
 
   .project-form {
-    margin: 0 17px;
+    // margin: 0 17px;
   ul {
     width: 100%;
   li {

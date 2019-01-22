@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- <navwork :navArray='navArray' :navIndex='0'></navwork> -->
-    <permissions v-if="navIndex==0" style="padding-top:20px;"></permissions>
+    <permissions v-if="navIndex==0" style="padding:17px;"></permissions>
   </div>
 </template>
 <script>

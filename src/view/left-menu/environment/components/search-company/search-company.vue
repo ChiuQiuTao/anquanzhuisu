@@ -1,7 +1,7 @@
 <template>
     <Row>
         <i-col span="24" class="search-company">
-            <section>
+            <section> 
                 <section class="type-title">
                     企业名称
                 </section>
