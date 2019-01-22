@@ -129,6 +129,7 @@ export default {
       // isFullscreen: false
     };
   },
+  
   computed: {
     ...mapGetters(["errorCount"]),
     tagNavList() {
@@ -156,6 +157,9 @@ export default {
     // hasReadErrorPage() {
     //   return this.$store.state.app.hasReadErrorPage;
     // }
+  },
+  mounted(){
+    var height = window.innerHeight;
   },
   methods: {
     ...mapMutations(["setBreadCrumb", "setTagNavList", "addTag", "setLocal"]),
