@@ -14,6 +14,8 @@
   </div>
 </template>
 <script>
+import BMap from 'BMap'
+import BMapSymbolSHAPEPOINT from 'BMap_Symbol_SHAPE_POINT'
 import { mapActions, mapMutations } from "vuex";
 import bus from "@/api/bus.js";
 import Inqu from "./component/search-company/search-company";
@@ -45,6 +47,7 @@ export default {
   beforeDestroy() {},
   mounted() {
     console.log(this.navIndex);
+    this.baiduMap()
     // var _this = this;
     // bus.$on("navIn", function(e) {
     //   _this.index = e;
@@ -52,7 +55,39 @@ export default {
     // });
   },
   beforeDestory() {},
-  methods: {},
+  methods: {
+    goback () {
+      this.$router.go(-1)
+    },
+    baiduMap () {
+      // var map = new BMap.Map('allmap')
+      // var point = new BMap.Point(111.742579, 40.818675)
+      // map.centerAndZoom(point, 12)
+      // var marker = new BMap.Marker(point)  // 创建标注
+      // map.addOverlay(marker)              // 将标注添加到地图中
+      var map = new BMap.Map("allmap");
+      map.centerAndZoom(new BMap.Point(116.328749,40.026922), 13);
+      map.enableScrollWheelZoom(true);
+      var index = 0;
+      var myGeo = new BMap.Geocoder();
+      var adds = [
+        new BMap.Point(116.307852,40.057031),
+        new BMap.Point(116.313082,40.047674),
+        new BMap.Point(116.328749,40.026922),
+        new BMap.Point(116.347571,39.988698),
+        new BMap.Point(116.316163,39.997753),
+        new BMap.Point(116.345867,39.998333),
+        new BMap.Point(116.403472,39.999411),
+        new BMap.Point(116.307901,40.05901)
+      ];
+      for(var i = 0; i<adds.length; i++){
+        var marker = new BMap.Marker(adds[i]);
+        map.addOverlay(marker);
+        // marker.setLabel(new BMap.Label("我是商圈:"+(i+1),{offset:new BMap.Size(20,-10)}));
+      }
+    }
+
+  },
   computed: {}
 };
 </script>

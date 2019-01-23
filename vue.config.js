@@ -16,6 +16,12 @@ const BASE_URL = process.env.NODE_ENV === 'production' ?
     '/'
 
 module.exports = {
+    configureWebpack:{
+        externals: {
+            'BMap': 'BMap',
+            'BMap_Symbol_SHAPE_POINT': 'BMap_Symbol_SHAPE_POINT'
+        }
+    },
     // Project deployment base
     // By default we assume your app will be deployed at the root of a domain,
     // e.g. https://www.my-app.com/
