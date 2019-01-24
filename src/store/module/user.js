@@ -9,6 +9,7 @@ export default {
         token: getToken(),
         access: '',
         hasGetInfo: false,
+
     },
     mutations: {
         setAvator(state, avatorPath) {

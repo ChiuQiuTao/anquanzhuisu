@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 
 import user from './module/user'
 import app from './module/app'
-import pub from './module/state'
+import navtop from './module/navtop'
 
 Vue.use(Vuex)
 
@@ -23,6 +23,6 @@ export default new Vuex.Store({
     modules: {
         user,
         app,
-        pub
+        navtop
     }
 })

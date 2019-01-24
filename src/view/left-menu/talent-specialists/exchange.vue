@@ -31,6 +31,7 @@
   </div>
 </template>
 <script>
+import { mapState, mapActions, mapMutations } from "vuex";
 import exch from "./component/exchangeInfo-search/exchangeInfo-search";
 import exchangapage from "@/components/page/page";
 import "./index.less";
@@ -38,6 +39,7 @@ export default {
   name: "exchange",
   data() {
     return {
+      navtop: ["人才专家信息管理", "专家建议栏", "信息交流区"],
       exchlist: [
         {
           b: "01",
@@ -69,6 +71,14 @@ export default {
       ]
     };
   },
+  activated() {
+    this.setmess(this.navtop);
+  },
+  methods: {
+    ...mapMutations(["setmess"]),
+    ...mapActions(["increment"])
+  },
+  deactivated() {},
   components: {
     exch,
     exchangapage

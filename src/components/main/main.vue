@@ -126,11 +126,11 @@ export default {
       maxLogo,
       getu: [],
       indexnum: 0,
-      myHeight: (window.innerHeight - 143) + 'px'
+      myHeight: window.innerHeight - 143 + "px"
       // isFullscreen: false
     };
   },
-  
+
   computed: {
     ...mapGetters(["errorCount"]),
     tagNavList() {
@@ -159,7 +159,7 @@ export default {
     //   return this.$store.state.app.hasReadErrorPage;
     // }
   },
-  
+
   methods: {
     ...mapMutations(["setBreadCrumb", "setTagNavList", "addTag", "setLocal"]),
     // ...mapActions(["handleLogin"]),
@@ -234,16 +234,13 @@ export default {
   mounted() {
     var _this = this;
 
-    window.onresize = function windowResize () {
-        // 通过捕获系统的onresize事件触发我们需要执行的事件
-        _this.myHeight = (window.innerHeight - 143) + 'px';
-        console.log(_this.myHeight);
-        console.log('this.myHeight');
-        bus.$emit('myHeight',(window.innerHeight - 143))
-    }
-
-
-
+    window.onresize = function windowResize() {
+      // 通过捕获系统的onresize事件触发我们需要执行的事件
+      _this.myHeight = window.innerHeight - 143 + "px";
+      console.log(_this.myHeight);
+      console.log("this.myHeight");
+      bus.$emit("myHeight", window.innerHeight - 143);
+    };
 
     /**
      * @description 初始化设置面包屑导航和标签导航

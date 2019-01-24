@@ -2,7 +2,6 @@
   <div class="talant">
     <talants></talants>
     <div class="dates">
-      <!-- <thead>fdsf</thead> -->
       <table border="0">
         <tr>
           <th>编号</th>
@@ -34,7 +33,7 @@
   </div>
 </template>
 <script>
-import { mapMutations, mapActions, mapGetters } from "vuex";
+import { mapState, mapActions, mapMutations } from "vuex";
 import talants from "./component/expert-search/expert-search";
 import tablepages from "@/components/page/page";
 import "./index.less";
@@ -42,6 +41,7 @@ export default {
   name: "talantment",
   data() {
     return {
+      navtop: ["人才专家信息管理", "专家建议栏", "信息交流区"],
       talantlist: [
         {
           b: "01",
@@ -75,6 +75,20 @@ export default {
         }
       ]
     };
+  },
+  computed: {
+    // ...mapState({
+    //   houquzhi: state => state.navtop.navs
+    // })
+  },
+  activated() {
+    this.setmess(this.navtop);
+  },
+  deactivated() {},
+  mounted() {},
+  methods: {
+    ...mapMutations(["setmess"]),
+    ...mapActions(["increment"])
   },
   components: {
     talants,
