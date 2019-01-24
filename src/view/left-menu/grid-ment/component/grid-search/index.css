@@ -1,8 +1,8 @@
 .expert-search {
   background-color: #fff;
+  border: 1px solid #a5a6a6;
   height: auto;
   width: auto;
-  border: 1px solid #8c8d8d;
 }
 .expert-search .search-title {
   background-color: #c81623;
@@ -20,8 +20,10 @@
   float: left;
   line-height: 25px;
   padding-left: 35px;
+  margin: 10px 0;
 }
 .expert-search .type .type-select {
+  margin: 10px 0;
   height: 25px;
   float: left;
   padding-left: 35px;
@@ -53,4 +55,5 @@
   border-radius: 15px;
   line-height: 23px;
   border: #ff0000;
+  margin: 10px;
 }

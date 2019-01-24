@@ -4,11 +4,20 @@
   </div>
 </template>
 <script>
+import { mapMutations } from "vuex";
 import goodquery from "./component/product-search/product-search";
 export default {
   name: "goods",
   data() {
-    return {};
+    return {
+      setmes: ["商品追溯"]
+    };
+  },
+  activated() {
+    this.setmess(this.setmes);
+  },
+  methods: {
+    ...mapMutations(["setmess"])
   },
   components: {
     goodquery

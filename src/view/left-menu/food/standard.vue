@@ -30,55 +30,59 @@
         </ul>
       </div>
       <page style="padding:22px 0"></page>
-
     </div>
   </div>
 </template>
 <script>
-import page from '../../../components/page/page'
-import bus from '@/api/bus.js'
-import navwork from '../../../components/nav/nav'
-import standardSearch from './components/standard-search/standard-search'
+import { mapMutations } from "vuex";
+import page from "../../../components/page/page";
+import bus from "@/api/bus.js";
+import navwork from "../../../components/nav/nav";
+import standardSearch from "./components/standard-search/standard-search";
 
 export default {
-  name: 'standard',
-  data () {
+  name: "standard",
+  data() {
     return {
-      navArray: ['安全标准', '法律法规'],
+      navtop: ["安全标准"],
       navIndex: 0,
-      lislaw: ['新增', '替代', '修改', '删除', '导出'],
+      lislaw: ["新增", "替代", "修改", "删除", "导出"],
       lislawss: [
         {
-          index: '01',
-          m: 'xxx公司',
-          f: '低风险',
-          l: '食品生产',
-          dx: '2次',
-          yx: '3次'
+          index: "01",
+          m: "xxx公司",
+          f: "低风险",
+          l: "食品生产",
+          dx: "2次",
+          yx: "3次"
         },
         {
-          index: '02',
-          m: 'xxx公司',
-          f: '低风险',
-          l: '食品生产',
-          dx: '2次',
-          yx: '3次'
+          index: "02",
+          m: "xxx公司",
+          f: "低风险",
+          l: "食品生产",
+          dx: "2次",
+          yx: "3次"
         }
       ]
-    }
+    };
+  },
+  activated() {
+    this.setmess(this.navtop);
+  },
+  methods: {
+    ...mapMutations(["setmess"])
   },
   components: {
     navwork,
     standardSearch,
     page
-
   }
-}
+};
 </script>
 
  <style lang="less">
-
-.laws{
+.laws {
   padding: 0 17px;
   padding-top: 22px;
   .project-btn {
@@ -106,36 +110,36 @@ export default {
   }
 
   .project-form {
-  ul {
-    width: 100%;
-  li {
-    width: 100%;
-    display: block;
-    list-style: none;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    // background-color: #eceaea;
-    color: #414141;
-      p {
-        width: 15%;
-        height: 40px;
-        border-right: 1px solid #ffffff;
+    ul {
+      width: 100%;
+      li {
+        width: 100%;
+        display: block;
+        list-style: none;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        // background-color: #eceaea;
+        color: #414141;
+        p {
+          width: 15%;
+          height: 40px;
+          border-right: 1px solid #ffffff;
           input {
             display: block;
             margin: 14px auto;
             background-color: #fff;
           }
+        }
+        span {
+          display: block;
+          width: 30%;
+          height: 40px;
+          border-right: 1px solid #ffffff;
+          text-align: center;
+          line-height: 40px;
+        }
       }
-      span {
-        display: block;
-        width: 30%;
-        height: 40px;
-        border-right: 1px solid #ffffff;
-        text-align: center;
-        line-height: 40px;
-      }
-    }
       .pro-first {
         width: 100%;
         height: 40px;
@@ -157,5 +161,4 @@ export default {
     }
   }
 }
-
 </style>

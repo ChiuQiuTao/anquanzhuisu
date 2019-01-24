@@ -35,6 +35,7 @@
 </template>
 
 <script>
+import { mapMutations } from "vuex";
 import laws from "./component/riskLevel-search/riskLevel-search";
 import "./index.less";
 import pageslaw from "@/components/page/page";
@@ -42,6 +43,7 @@ export default {
   name: "law-infor",
   data() {
     return {
+      navArrays: ["执法信息"],
       lislaw: ["查看", "导出"],
       lislawss: [
         {
@@ -71,6 +73,12 @@ export default {
       ]
     };
   },
+  methods: {
+    ...mapMutations(["setmess"])
+  },
+  activated() {
+    this.setmess(this.navArrays);
+  },
   components: {
     laws,
     pageslaw
@@ -80,8 +88,8 @@ export default {
 <style lang="less">
 .law {
   width: 100%;
-  padding: 13px;
   background-color: #ffffff;
+  padding: 13px;
 }
 </style>
 

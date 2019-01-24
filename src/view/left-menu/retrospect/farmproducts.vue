@@ -4,11 +4,20 @@
   </div>
 </template>
 <script>
+import { mapMutations } from "vuex";
 import farms from "./component/product-search/product-search";
 export default {
   name: "farmproducts",
   data() {
-    return {};
+    return {
+      setmes: ["农产品追溯"]
+    };
+  },
+  activated() {
+    this.setmess(this.setmes);
+  },
+  methods: {
+    ...mapMutations(["setmess"])
   },
   components: {
     farms

@@ -6,11 +6,10 @@
     </div>
 
     <div class="echart">
-      <div class='echart-header'>
+      <div class="echart-header">
         <div class="echaryt-header-left">企业登录统计</div>
         <div class="echaryt-header-center">
-          <div class="box"></div>
-          次数
+          <div class="box"></div>次数
         </div>
         <div class="echaryt-header-right"></div>
       </div>
@@ -24,68 +23,73 @@
   </div>
 </template>
 <script>
-import bus from '@/api/bus.js'
-import navwork from '../../../components/nav/nav'
-import companyLogin from './components/traffic-search/traffic-search'
-import Example from './example.vue'
+import { mapMutations } from "vuex";
+import bus from "@/api/bus.js";
+import navwork from "../../../components/nav/nav";
+import companyLogin from "./components/traffic-search/traffic-search";
+import Example from "./example.vue";
 
 export default {
-  name: 'login-diary',
-  data () {
+  name: "login-diary",
+  data() {
     return {
-      navArray: ['企业登录日志', '异常日志管理', '系统访问量统计', '操作日志'],
+      navArray: ["企业登录日志"],
       navIndex: 0
-    }
+    };
+  },
+  activated() {
+    this.setmess(this.navArray);
+  },
+  methods: {
+    ...mapMutations(["setmess"])
   },
   components: {
     navwork,
     companyLogin,
     Example
   }
-}
+};
 </script>
 
 <style>
-.login-diary{
+.login-diary {
   background-color: #fff;
   padding-bottom: 60px;
 }
-.login-diary-header{
+.login-diary-header {
   padding: 0 17px;
   padding-top: 22px;
 }
-.echart{
+.echart {
   padding: 0 17px;
 }
-.echart-header{
+.echart-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-top: 45px;
   margin-bottom: 15px;
-
 }
-.echaryt-header-left{
+.echaryt-header-left {
   font-size: 16px;
   color: #000;
-  width: 30%
+  width: 30%;
 }
-.echaryt-header-center{
+.echaryt-header-center {
   display: flex;
   align-items: center;
   justify-content: center;
   color: #000;
-  width: 30%
-
+  width: 30%;
 }
-.echaryt-header-center .box{
+.echaryt-header-center .box {
   width: 20px;
   height: 12px;
   border-radius: 2px;
   background-color: #ff7f50;
   margin-right: 5px;
 }
-.echaryt-header-right{
+.echaryt-header-right {
   width: 30%;
 }
 </style>

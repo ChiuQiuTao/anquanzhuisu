@@ -34,6 +34,7 @@
   </div>
 </template>
 <script>
+import { mapMutations } from "vuex";
 import risksquery from "./component/risk-search/risk-search";
 import riskpage from "@/components/page/page";
 import "../grid-ment/index.less";
@@ -41,6 +42,7 @@ export default {
   name: "risk",
   data() {
     return {
+      navtop: ["风险等级"],
       riskbtn: ["查看", "导出"],
       listrisk: [
         {
@@ -77,6 +79,12 @@ export default {
         }
       ]
     };
+  },
+  activated() {
+    this.setmess(this.navtop);
+  },
+  methods: {
+    ...mapMutations(["setmess"])
   },
   components: {
     risksquery,

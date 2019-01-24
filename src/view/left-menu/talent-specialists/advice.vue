@@ -30,46 +30,54 @@
   </div>
 </template>
 <script>
-import adviced from './component/expertAdvice-search/expertAdvice-search'
-import advicedpage from '@/components/page/page'
-import './index.less'
+import { mapMutations } from "vuex";
+import adviced from "./component/expertAdvice-search/expertAdvice-search";
+import advicedpage from "@/components/page/page";
+import "./index.less";
 export default {
-  name: 'advice',
-  data () {
+  name: "advice",
+  data() {
     return {
+      navtop: ["专家建议栏"],
       advicslist: [
         {
-          b: '01',
-          x: '水稻增产建议',
+          b: "01",
+          x: "水稻增产建议",
           l:
-            '建议使用农科院新品种水稻518，其具备亩产高、抗虫、防倒伏分身乏术发顺丰',
-          ly: '2018-10-21,10:00',
-          dh: '郭大侠'
+            "建议使用农科院新品种水稻518，其具备亩产高、抗虫、防倒伏分身乏术发顺丰",
+          ly: "2018-10-21,10:00",
+          dh: "郭大侠"
         },
         {
-          b: '01',
-          x: '水稻增产建议',
+          b: "01",
+          x: "水稻增产建议",
           l:
-            '建议使用农科院新品种水稻518，其具备亩产高、抗虫、防倒伏分身乏术发顺丰',
-          ly: '2018-10-21,10:00',
-          dh: '郭大侠'
+            "建议使用农科院新品种水稻518，其具备亩产高、抗虫、防倒伏分身乏术发顺丰",
+          ly: "2018-10-21,10:00",
+          dh: "郭大侠"
         },
         {
-          b: '01',
-          x: '水稻增产建议',
+          b: "01",
+          x: "水稻增产建议",
           l:
-            '建议使用农科院新品种水稻518，其具备亩产高、抗虫、防倒伏分身乏术发顺丰',
-          ly: '2018-10-21,10:00',
-          dh: '郭大侠'
+            "建议使用农科院新品种水稻518，其具备亩产高、抗虫、防倒伏分身乏术发顺丰",
+          ly: "2018-10-21,10:00",
+          dh: "郭大侠"
         }
       ]
-    }
+    };
+  },
+  activated() {
+    this.setmess(this.navtop);
+  },
+  methods: {
+    ...mapMutations(["setmess"])
   },
   components: {
     adviced,
     advicedpage
   }
-}
+};
 </script>
 <style lang="less">
 .advics {

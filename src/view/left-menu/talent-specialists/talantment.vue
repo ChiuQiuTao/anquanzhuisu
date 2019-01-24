@@ -41,7 +41,7 @@ export default {
   name: "talantment",
   data() {
     return {
-      navtop: ["人才专家信息管理", "专家建议栏", "信息交流区"],
+      navtop: ["人才专家信息管理"],
       talantlist: [
         {
           b: "01",

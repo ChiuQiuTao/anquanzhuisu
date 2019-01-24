@@ -37,6 +37,7 @@
   </div>
 </template>
 <script>
+import { mapMutations } from "vuex";
 import checttask from "./component/assign-search/assign-search";
 import pagetask from "@/components/page/page";
 import "./index.less";
@@ -44,6 +45,7 @@ export default {
   name: "task-ment",
   data() {
     return {
+      navArrays: ["任务指派"],
       lisbtn: ["新增", "查看", "删除"],
       listask: [
         {
@@ -75,6 +77,12 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    ...mapMutations(["setmess"])
+  },
+  activated() {
+    this.setmess(this.navArrays);
   },
   components: {
     checttask,

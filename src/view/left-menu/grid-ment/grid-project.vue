@@ -28,18 +28,15 @@
   </div>
 </template>
 <script>
-import bus from "@/api/bus.js";
+import { mapMutations } from "vuex";
 import checks from "./component/grid-search/grid-search";
 import pages from "@/components/page/page";
 import "./index.less";
 export default {
-  props: {
-    navIndex: Number
-  },
   name: "grid-project",
   data() {
     return {
-      navArrays: ["网络规划", "任务指派", "执法信息"],
+      navArrays: ["网络规划"],
       liss: ["新增", "修改", "删除", "查看", "负责人", "网络效果"],
       lists: [
         {
@@ -65,16 +62,12 @@ export default {
     pages
   },
   methods: {
-    btns(ss) {
-      console.log(ss);
-    }
+    ...mapMutations(["setmess"])
   },
   activated() {
-    bus.$emit("navIn", this.navArrays);
+    this.setmess(this.navArrays);
   },
-  deactivated() {
-    bus.$emit("navIn", this.navArrays);
-  },
+  deactivated() {},
   mounted() {},
   beforeDestroy() {}
 };
@@ -83,8 +76,8 @@ export default {
 <style lang="less">
 .project {
   width: 100%;
-  padding: 10px;
   background-color: #fff;
+  padding: 13px;
 }
 </style>
 

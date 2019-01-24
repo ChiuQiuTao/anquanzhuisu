@@ -1,14 +1,20 @@
 <template>
-  <div>
-    <p>gis</p>
-    <p style="height:800px;">sd放松放松fsd</p>
-    <Icon :size="18" type="arrow-resize"></Icon>
-    <Icon :size="18" type="md-arrow-dropdown"></Icon>
-    <Icon :size="18" type="chatboxes"></Icon>
-  </div>
+  <div>敬请期待</div>
 </template>
 <script>
+import { mapMutations } from "vuex";
 export default {
-  name: "About-Us"
+  name: "About-Us",
+  data() {
+    return {
+      navtop: ["关于我们"]
+    };
+  },
+  activated() {
+    this.setmess(this.navtop);
+  },
+  methods: {
+    ...mapMutations(["setmess"])
+  }
 };
 </script>

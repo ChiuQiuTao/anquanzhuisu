@@ -33,7 +33,12 @@
         <!-- 菜单 -->
       </Sider>
       <Layout>
-        <sider-trigger :collapsed="collapsed" icon="md-menu" @on-change="handleCollpasedChange" :class="['sider-trigger-a', collapsed ? 'handlecollapsedt' : 'handlecollapsedf']"></sider-trigger>
+        <sider-trigger
+          :collapsed="collapsed"
+          icon="md-menu"
+          @on-change="handleCollpasedChange"
+          :class="['sider-trigger-a', collapsed ? 'handlecollapsedt' : 'handlecollapsedf']"
+        ></sider-trigger>
 
         <!-- <Header class="header-con">
           <header-bar :collapsed="collapsed" @on-coll-change="handleCollapsedChange">
@@ -74,6 +79,7 @@
               </div>
 
               <div class="contentgundong" v-bind:style="{height: myHeight}">
+                <navs></navs>
                 <keep-alive :include="cacheList" :navIndex="indexnum">
                   <router-view/>
                 </keep-alive>
@@ -87,7 +93,8 @@
   </div>
 </template>
 <script>
-import siderTrigger from './components/header-bar/sider-trigger/sider-trigger'
+import navs from "_c/nav/nav";
+import siderTrigger from "./components/header-bar/sider-trigger/sider-trigger";
 import hops from "_c/top/top";
 import bus from "@/api/bus.js";
 import SideMenu from "./components/side-menu";
@@ -118,8 +125,8 @@ export default {
     // ErrorStore,
     // User,
     hops,
-    siderTrigger
-
+    siderTrigger,
+    navs
   },
   data() {
     return {
@@ -162,7 +169,6 @@ export default {
     // }
   },
 
-  
   watch: {
     $route(newRoute) {
       const { name, query, params, meta } = newRoute;
@@ -243,11 +249,10 @@ export default {
         params,
         query
       });
-      
     },
-    handleCollpasedChange (state) {
+    handleCollpasedChange(state) {
       this.collapsed = state;
-      this.$emit('on-coll-change', state)
+      this.$emit("on-coll-change", state);
     },
     // handleCollapsedChange(state) {
     //   this.collapsed = state;
@@ -266,27 +271,26 @@ export default {
     handleClick(item) {
       this.turnToPage(item);
     }
-  },
+  }
 };
 </script>
 
 <style>
-.handlecollapsedf{
+.handlecollapsedf {
   position: fixed;
-  bottom:34px;
+  bottom: 34px;
   /* background-color: #000; */
   z-index: 999;
   margin-left: -44px;
 }
-.handlecollapsedt{
+.handlecollapsedt {
   position: fixed;
-  bottom:34px;
+  bottom: 34px;
   z-index: 999;
-  transform:rotate(180deg);
-  -ms-transform:rotate(180deg); 	/* IE 9 */
-  -moz-transform:rotate(180deg); 	/* Firefox */
-  -webkit-transform:rotate(180deg); /* Safari 和 Chrome */
-  -o-transform:rotate(180deg); 	/* Opera */
-
+  transform: rotate(180deg);
+  -ms-transform: rotate(180deg); /* IE 9 */
+  -moz-transform: rotate(180deg); /* Firefox */
+  -webkit-transform: rotate(180deg); /* Safari 和 Chrome */
+  -o-transform: rotate(180deg); /* Opera */
 }
 </style>

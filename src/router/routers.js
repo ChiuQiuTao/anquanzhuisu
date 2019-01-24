@@ -54,7 +54,8 @@ var arr = [{
         meta: {
             icon: 'md-pin',
             title: 'GIS地图',
-            showAlways: true
+            showAlways: true,
+            hideInMenu: false
                 //一个子路由要showAlways
         },
         component: Main,
@@ -63,7 +64,8 @@ var arr = [{
             name: 'GIS',
             meta: {
                 icon: 'md-apps',
-                title: '信息管理'
+                title: '信息管理',
+                hideInMenu: false
             },
             component: () =>
                 import ('@/view/left-menu/GIS/GIS.vue')
@@ -76,7 +78,8 @@ var arr = [{
         meta: {
             icon: 'md-briefcase',
             title: '网格管理',
-            showAlways: true
+            showAlways: true,
+            hideInMenu: false
                 //一个子路由要showAlways
         },
         component: Main,
@@ -85,7 +88,8 @@ var arr = [{
                 name: 'grid-project',
                 meta: {
                     icon: 'md-apps',
-                    title: '网格规划'
+                    title: '网格规划',
+                    hideInMenu: false
                 },
                 component: () =>
                     import ('@/view/left-menu/grid-ment/grid-project.vue')
@@ -95,7 +99,8 @@ var arr = [{
                 name: 'task-ment',
                 meta: {
                     icon: 'md-apps',
-                    title: '任务指派'
+                    title: '任务指派',
+                    hideInMenu: false
                 },
                 component: () =>
                     import ('@/view/left-menu/grid-ment/task-ment.vue')
@@ -105,7 +110,8 @@ var arr = [{
                 name: 'law-infor',
                 meta: {
                     icon: 'md-apps',
-                    title: '执法信息'
+                    title: '执法信息',
+                    hideInMenu: false
                 },
                 component: () =>
                     import ('@/view/left-menu/grid-ment/law-infor.vue')
@@ -118,7 +124,8 @@ var arr = [{
         meta: {
             icon: 'md-analytics',
             title: '风险等级',
-            showAlways: true
+            showAlways: true,
+            hideInMenu: false
                 //一个子路由要showAlways:true
         },
         component: Main,
@@ -127,7 +134,8 @@ var arr = [{
             name: 'risk',
             meta: {
                 icon: 'md-apps',
-                title: '风险等级'
+                title: '风险等级',
+                hideInMenu: false
             },
             component: () =>
                 import ('@/view/left-menu/risk-grade/risk.vue')
@@ -139,8 +147,9 @@ var arr = [{
         meta: {
             icon: 'md-clipboard',
             title: '溯源查询',
-            //showAlways: true
-            //一个子路由要showAlways:true
+            showAlways: true,
+            hideInMenu: false
+                //一个子路由要showAlways:true
         },
         component: Main,
         children: [{
@@ -148,7 +157,8 @@ var arr = [{
                 name: 'goods',
                 meta: {
                     icon: 'md-apps',
-                    title: '商品追溯'
+                    title: '商品追溯',
+                    hideInMenu: true
                 },
                 component: () =>
                     import ('@/view/left-menu/retrospect/goods.vue')
@@ -158,7 +168,8 @@ var arr = [{
                 name: 'livestock',
                 meta: {
                     icon: 'md-apps',
-                    title: '禽畜追溯'
+                    title: '禽畜追溯',
+                    hideInMenu: true
                 },
                 component: () =>
                     import ('@/view/left-menu/retrospect/livestock.vue')
@@ -168,7 +179,8 @@ var arr = [{
                 name: 'farmproducts',
                 meta: {
                     icon: 'md-apps',
-                    title: '农产品追溯'
+                    title: '农产品追溯',
+                    hideInMenu: true
                 },
                 component: () =>
                     import ('@/view/left-menu/retrospect/farmproducts.vue')
@@ -178,7 +190,8 @@ var arr = [{
                 name: 'product',
                 meta: {
                     icon: 'md-apps',
-                    title: '产品追溯'
+                    title: '产品追溯',
+                    hideInMenu: false
                 },
                 component: () =>
                     import ('@/view/left-menu/retrospect/product.vue')
@@ -191,8 +204,9 @@ var arr = [{
         meta: {
             icon: 'md-contacts',
             title: '人才专家',
-            //showAlways: true
-            //一个子路由要showAlways:true
+            showAlways: true,
+            hideInMenu: false
+                //一个子路由要showAlways:true
         },
         component: Main,
         children: [{
@@ -200,7 +214,8 @@ var arr = [{
                 name: 'talantment',
                 meta: {
                     icon: 'md-apps',
-                    title: '人才专家信息管理'
+                    title: '人才专家信息管理',
+                    hideInMenu: false
                 },
                 component: () =>
                     import ('@/view/left-menu/talent-specialists/talantment.vue')
@@ -210,7 +225,8 @@ var arr = [{
                 name: 'advice',
                 meta: {
                     icon: 'md-apps',
-                    title: '专家建议栏'
+                    title: '专家建议栏',
+                    hideInMenu: false
                 },
                 component: () =>
                     import ('@/view/left-menu/talent-specialists/advice.vue')
@@ -220,7 +236,8 @@ var arr = [{
                 name: 'exchange',
                 meta: {
                     icon: 'md-apps',
-                    title: '信息交流区'
+                    title: '信息交流区',
+                    hideInMenu: false
                 },
                 component: () =>
                     import ('@/view/left-menu/talent-specialists/exchange.vue')
@@ -234,8 +251,9 @@ var arr = [{
         meta: {
             icon: 'ios-flask-outline',
             title: '食品安全',
-            //showAlways: true
-            //一个子路由要showAlways:true
+            showAlways: true,
+            hideInMenu: false
+                //一个子路由要showAlways:true
         },
         component: Main,
         children: [{
@@ -243,7 +261,8 @@ var arr = [{
             name: 'standard',
             meta: {
                 icon: 'md-apps',
-                title: '安全标准'
+                title: '安全标准',
+                hideInMenu: false
             },
             component: () =>
                 import ('@/view/left-menu/food/standard.vue')
@@ -252,7 +271,8 @@ var arr = [{
             name: 'Laws-re',
             meta: {
                 icon: 'md-apps',
-                title: '法律法规'
+                title: '法律法规',
+                hideInMenu: false
             },
             component: () =>
                 import ('@/view/left-menu/food/Laws-re.vue')
@@ -264,6 +284,8 @@ var arr = [{
         meta: {
             icon: 'md-globe',
             title: '环境监控',
+            showAlways: true,
+            hideInMenu: false
         },
         component: Main,
         children: [{
@@ -271,7 +293,8 @@ var arr = [{
             name: 'information',
             meta: {
                 icon: 'md-apps',
-                title: '环境数据查询'
+                title: '环境数据查询',
+                hideInMenu: false
             },
             component: () =>
                 import ('@/view/left-menu/environment/information.vue')
@@ -280,7 +303,8 @@ var arr = [{
             name: 'real',
             meta: {
                 icon: 'md-apps',
-                title: '实时监控'
+                title: '实时监控',
+                hideInMenu: false
             },
             component: () =>
                 import ('@/view/left-menu/environment/real.vue')
@@ -292,6 +316,7 @@ var arr = [{
         meta: {
             icon: 'ios-albums',
             title: '信息预警',
+            hideInMenu: false
         },
         component: Main,
         children: [{
@@ -299,7 +324,8 @@ var arr = [{
                 name: 'plant',
                 meta: {
                     icon: 'md-apps',
-                    title: '种植预警'
+                    title: '种植预警',
+                    hideInMenu: false
                 },
                 component: () =>
                     import ('@/view/left-menu/early-warning/plant.vue')
@@ -308,7 +334,8 @@ var arr = [{
                 name: 'cultivation',
                 meta: {
                     icon: 'md-apps',
-                    title: '养殖预警'
+                    title: '养殖预警',
+                    hideInMenu: false
                 },
                 component: () =>
                     import ('@/view/left-menu/early-warning/cultivation.vue')
@@ -318,7 +345,8 @@ var arr = [{
                 name: 'company',
                 meta: {
                     icon: 'md-apps',
-                    title: '企业预警'
+                    title: '企业预警',
+                    hideInMenu: false
                 },
                 component: () =>
                     import ('@/view/left-menu/early-warning/company.vue')
@@ -332,6 +360,8 @@ var arr = [{
         meta: {
             icon: 'md-clipboard',
             title: '日志管理',
+            showAlways: true,
+            hideInMenu: false
         },
         component: Main,
         children: [{
@@ -339,7 +369,8 @@ var arr = [{
                 name: 'login-diary',
                 meta: {
                     icon: 'md-apps',
-                    title: '企业登录日志'
+                    title: '企业登录日志',
+                    hideInMenu: false
                 },
                 component: () =>
                     import ('@/view/left-menu/diary/login-diary.vue')
@@ -348,7 +379,8 @@ var arr = [{
                 name: 'abnormal',
                 meta: {
                     icon: 'md-apps',
-                    title: '异常日志管理'
+                    title: '异常日志管理',
+                    hideInMenu: false
                 },
                 component: () =>
                     import ('@/view/left-menu/diary/abnormal.vue')
@@ -358,7 +390,8 @@ var arr = [{
                 name: 'statistics',
                 meta: {
                     icon: 'md-apps',
-                    title: '系统访问量统计'
+                    title: '系统访问量统计',
+                    hideInMenu: false
                 },
                 component: () =>
                     import ('@/view/left-menu/diary/statistics.vue')
@@ -368,7 +401,8 @@ var arr = [{
                 name: 'operation',
                 meta: {
                     icon: 'md-apps',
-                    title: '操作日志'
+                    title: '操作日志',
+                    hideInMenu: false
                 },
                 component: () =>
                     import ('@/view/left-menu/diary/operation.vue')
@@ -381,8 +415,9 @@ var arr = [{
         meta: {
             icon: 'md-settings',
             title: '基础设置',
-            //showAlways: true
-            //一个子路由要showAlways:true
+            showAlways: true,
+            hideInMenu: false
+                //一个子路由要showAlways:true
         },
         component: Main,
         children: [{
@@ -390,7 +425,8 @@ var arr = [{
                 name: 'jurisdiction',
                 meta: {
                     icon: 'md-apps',
-                    title: '权限设置'
+                    title: '权限设置',
+                    hideInMenu: false
                 },
                 component: () =>
                     import ('@/view/left-menu/basics/jurisdiction.vue')
@@ -399,7 +435,8 @@ var arr = [{
                 name: 'help',
                 meta: {
                     icon: 'md-apps',
-                    title: '使用帮助'
+                    title: '使用帮助',
+                    hideInMenu: false
                 },
                 component: () =>
                     import ('@/view/left-menu/basics/help.vue')
@@ -409,7 +446,8 @@ var arr = [{
                 name: 'About-Us',
                 meta: {
                     icon: 'md-apps',
-                    title: '关于我们'
+                    title: '关于我们',
+                    hideInMenu: false
                 },
                 component: () =>
                     import ('@/view/left-menu/basics/About-Us.vue')

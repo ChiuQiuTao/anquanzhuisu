@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { mapState, mapActions, mapMutations } from "vuex";
+import { mapState } from "vuex";
 import navd from "@/assets/images/nav_icon01.png";
 import navdd from "@/assets/images/nav_icon02.png";
 import "./index.less";

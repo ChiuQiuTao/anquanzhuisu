@@ -36,6 +36,7 @@
 </template>
 
 <script>
+import { mapMutations } from "vuex";
 import InforCard from "_c/info-card";
 import CountTo from "_c/count-to";
 import { ChartPie, ChartBar } from "_c/charts";
@@ -89,16 +90,23 @@ export default {
         Fri: 24643,
         Sat: 1322,
         Sun: 1324
-      }
+      },
+      navtop: ["工作台"]
     };
   },
   mounted() {
-    //
+    this.setmess(this.navtop);
+  },
+  methods: {
+    ...mapMutations(["setmess"])
   }
 };
 </script>
 
 <style lang="less">
+.meizhao {
+  margin-top: 20px;
+}
 .count-style {
   font-size: 50px;
 }

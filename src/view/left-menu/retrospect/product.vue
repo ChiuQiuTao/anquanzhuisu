@@ -4,11 +4,20 @@
   </div>
 </template>
 <script>
+import { mapMutations } from "vuex";
 import prdquery from "./component/farm-search/farm-search";
 export default {
   name: "product",
   data() {
-    return {};
+    return {
+      setmes: ["产品追溯"]
+    };
+  },
+  activated() {
+    this.setmess(this.setmes);
+  },
+  methods: {
+    ...mapMutations(["setmess"])
   },
   components: {
     prdquery
