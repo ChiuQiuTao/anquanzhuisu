@@ -1,6 +1,7 @@
 <template>
   <a @click="handleChange" type="text" :class="['sider-trigger-a', collapsed ? 'collapsed' : '']">
-    <Icon :type="icon" :size="size"/>
+    <!-- <Icon :type="icon" :size="size"/> -->
+    <img src="../../../../../assets/images/left-icon.png" alt="">
   </a>
 </template>
 <script>

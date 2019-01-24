@@ -6,7 +6,7 @@
         hide-trigger
         collapsible
         :width="210"
-        :collapsed-width="60"
+        :collapsed-width="0"
         v-model="collapsed"
         class="left-sider"
         :style="{overflow: 'hidden'}"
@@ -33,6 +33,8 @@
         <!-- 菜单 -->
       </Sider>
       <Layout>
+        <sider-trigger :collapsed="collapsed" icon="md-menu" @on-change="handleCollpasedChange" :class="['sider-trigger-a', collapsed ? 'handlecollapsedt' : 'handlecollapsedf']"></sider-trigger>
+
         <!-- <Header class="header-con">
           <header-bar :collapsed="collapsed" @on-coll-change="handleCollapsedChange">
             <user :user-avator="userAvator"/>
@@ -85,6 +87,7 @@
   </div>
 </template>
 <script>
+import siderTrigger from './components/header-bar/sider-trigger/sider-trigger'
 import hops from "_c/top/top";
 import bus from "@/api/bus.js";
 import SideMenu from "./components/side-menu";
@@ -114,7 +117,9 @@ export default {
     // Fullscreen,
     // ErrorStore,
     // User,
-    hops
+    hops,
+    siderTrigger
+
   },
   data() {
     return {
@@ -123,8 +128,8 @@ export default {
       maxLogo,
       getu: [],
       indexnum: 0,
-      myHeight: window.innerHeight - 143 + "px"
-      // isFullscreen: false
+      myHeight: window.innerHeight - 143 + "px",
+      isFullscreen: false
     };
   },
 
@@ -157,51 +162,7 @@ export default {
     // }
   },
 
-  methods: {
-    ...mapMutations(["setBreadCrumb", "setTagNavList", "addTag", "setLocal"]),
-    // ...mapActions(["handleLogin"]),
-    homes() {
-      // console.log(this);
-      this.$router.push({
-        name: "_home"
-      });
-    },
-    turnToPage(route) {
-      let { name, params, query } = {};
-      if (typeof route === "string") name = route;
-      else {
-        name = route.name;
-        params = route.params;
-        query = route.query;
-      }
-      if (name.indexOf("isTurnByHref_") > -1) {
-        window.open(name.split("_")[1]);
-        return;
-      }
-      this.$router.push({
-        name,
-        params,
-        query
-      });
-    },
-    // handleCollapsedChange(state) {
-    //   this.collapsed = state;
-    // },
-    handleCloseTag(res, type, route) {
-      if (type === "all") {
-        this.turnToPage(this.$config.homeName);
-      } else if (routeEqual(this.$route, route)) {
-        if (type !== "others") {
-          const nextRoute = getNextRoute(this.tagNavList, route);
-          this.$router.push(nextRoute);
-        }
-      }
-      this.setTagNavList(res);
-    },
-    handleClick(item) {
-      this.turnToPage(item);
-    }
-  },
+  
   watch: {
     $route(newRoute) {
       const { name, query, params, meta } = newRoute;
@@ -255,6 +216,77 @@ export default {
         name: this.$config.homeName
       });
     }
-  }
+  },
+  methods: {
+    ...mapMutations(["setBreadCrumb", "setTagNavList", "addTag", "setLocal"]),
+    // ...mapActions(["handleLogin"]),
+    homes() {
+      // console.log(this);
+      this.$router.push({
+        name: "_home"
+      });
+    },
+    turnToPage(route) {
+      let { name, params, query } = {};
+      if (typeof route === "string") name = route;
+      else {
+        name = route.name;
+        params = route.params;
+        query = route.query;
+      }
+      if (name.indexOf("isTurnByHref_") > -1) {
+        window.open(name.split("_")[1]);
+        return;
+      }
+      this.$router.push({
+        name,
+        params,
+        query
+      });
+      
+    },
+    handleCollpasedChange (state) {
+      this.collapsed = state;
+      this.$emit('on-coll-change', state)
+    },
+    // handleCollapsedChange(state) {
+    //   this.collapsed = state;
+    // },
+    handleCloseTag(res, type, route) {
+      if (type === "all") {
+        this.turnToPage(this.$config.homeName);
+      } else if (routeEqual(this.$route, route)) {
+        if (type !== "others") {
+          const nextRoute = getNextRoute(this.tagNavList, route);
+          this.$router.push(nextRoute);
+        }
+      }
+      this.setTagNavList(res);
+    },
+    handleClick(item) {
+      this.turnToPage(item);
+    }
+  },
 };
 </script>
+
+<style>
+.handlecollapsedf{
+  position: fixed;
+  bottom:34px;
+  /* background-color: #000; */
+  z-index: 999;
+  margin-left: -44px;
+}
+.handlecollapsedt{
+  position: fixed;
+  bottom:34px;
+  z-index: 999;
+  transform:rotate(180deg);
+  -ms-transform:rotate(180deg); 	/* IE 9 */
+  -moz-transform:rotate(180deg); 	/* Firefox */
+  -webkit-transform:rotate(180deg); /* Safari 和 Chrome */
+  -o-transform:rotate(180deg); 	/* Opera */
+
+}
+</style>
