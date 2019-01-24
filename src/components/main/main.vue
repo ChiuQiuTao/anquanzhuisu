@@ -33,23 +33,23 @@
         <!-- 菜单 -->
       </Sider>
       <Layout>
-        <!-- <Header class="header-con"> -->
-        <!-- <header-bar :collapsed="collapsed" @on-coll-change="handleCollapsedChange"> -->
-        <!-- <user :user-avator="userAvator"/> -->
-        <!-- <language
+        <!-- <Header class="header-con">
+          <header-bar :collapsed="collapsed" @on-coll-change="handleCollapsedChange">
+            <user :user-avator="userAvator"/>
+            <language
               v-if="$config.useI18n"
               @on-lang-change="setLocal"
               style="margin-right: 10px;"
               :lang="local"
-        />-->
-        <!-- <error-store
-            v-if="$config.plugin['error-store'] && $config.plugin['error-store'].showInHeader"
-            :has-read="hasReadErrorPage"
-            :count="errorCount"
-        ></error-store>-->
-        <!-- <fullscreen v-model="isFullscreen" style="margin-right: 10px;"/> -->
-        <!-- </header-bar> -->
-        <!-- </Header> -->
+            />
+            <error-store
+              v-if="$config.plugin['error-store'] && $config.plugin['error-store'].showInHeader"
+              :has-read="hasReadErrorPage"
+              :count="errorCount"
+            ></error-store>
+            <fullscreen v-model="isFullscreen" style="margin-right: 10px;"/>
+          </header-bar>
+        </Header>-->
         <!-- 整条导航栏 -->
         <Content class="main-content-con">
           <Layout class="main-layout-con">
@@ -72,7 +72,6 @@
               </div>
 
               <div class="contentgundong" v-bind:style="{height: myHeight}">
-                <navbar :navArray="getu"></navbar>
                 <keep-alive :include="cacheList" :navIndex="indexnum">
                   <router-view/>
                 </keep-alive>
@@ -98,11 +97,10 @@ import TagsNav from "./components/tags-nav";
 // 全屏
 // import Language from "./components/language";
 // 语言
-// import ErrorStore from "./components/error-store";
+// /import ErrorStore from "./components/error-store";
 // 出错信息
 import { mapMutations, mapActions, mapGetters } from "vuex";
 import { getNewTagList, getNextRoute, routeEqual } from "@/libs/util";
-import navbar from "_c/nav/nav";
 import minLogo from "@/assets/images/logo-min.png";
 import maxLogo from "@/assets/images/logo.png";
 import "./main.less";
@@ -116,8 +114,7 @@ export default {
     // Fullscreen,
     // ErrorStore,
     // User,
-    hops,
-    navbar
+    hops
   },
   data() {
     return {
