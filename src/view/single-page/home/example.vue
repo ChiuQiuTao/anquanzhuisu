@@ -71,7 +71,7 @@ export default {
           data: [257, 358, 278, 234, 290, 330, 310]
         },
         {
-          name: "游戏/视频",
+          name: "互联网金融",
           type: "line",
           stack: "总量",
           areaStyle: {
@@ -82,7 +82,7 @@ export default {
           data: [379, 268, 354, 269, 310, 478, 358]
         },
         {
-          name: "餐饮/外卖",
+          name: "销售企业",
           type: "line",
           stack: "总量",
           areaStyle: {
@@ -93,7 +93,7 @@ export default {
           data: [320, 332, 301, 334, 390, 330, 320]
         },
         {
-          name: "快递/电商",
+          name: "电商企业",
           type: "line",
           stack: "总量",
           label: {

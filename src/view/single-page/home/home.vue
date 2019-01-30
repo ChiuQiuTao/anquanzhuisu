@@ -1,46 +1,55 @@
 <template>
   <div class="meizhao">
-    <Row :gutter="20">
-      <i-col
-        :xs="12"
-        :md="8"
-        :lg="4"
-        v-for="(infor, i) in inforCardData"
-        :key="`infor-${i}`"
-        style="height: 120px;padding-bottom: 10px;"
-      >
-        <infor-card shadow :color="infor.color" :icon="infor.icon" :icon-size="36">
-          <count-to :end="infor.count" count-class="count-style"/>
-          <p>{{ infor.title }}</p>
-        </infor-card>
-      </i-col>
-    </Row>
-    <Row :gutter="20" style="margin-top: 10px;">
-      <i-col :md="24" :lg="8" style="margin-bottom: 20px;">
-        <Card shadow>
-          <chart-pie style="height: 300px;" :value="pieData" text="用户访问来源"></chart-pie>
-        </Card>
-      </i-col>
-      <i-col :md="24" :lg="16" style="margin-bottom: 20px;">
-        <Card shadow>
-          <chart-bar style="height: 300px;" :value="barData" text="每周用户活跃量"/>
-        </Card>
-      </i-col>
-    </Row>
-    <Row>
-      <Card shadow>
-        <example style="height: 310px;"/>
-      </Card>
-    </Row>
+    <div class="meizhao-zhibaio">
+      <div class="zhibiao-l">
+        <div class="zhibiao-l-f">
+          <label>指标解释</label>
+          <div class="zhi-shu">|</div>
+          <label>地域</label>
+          <Select size="small" v-model="model1" style="width:100px" placeholder="中新食品区">
+            <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+          </Select>
+        </div>
+      </div>
+      <div class="zhibiao-r">
+        <div class="zhibiao-l-f">
+          <label>日期</label>
+          <Col span="8" class="zhi-rl">
+            <DatePicker size="small" type="date" placeholder="Select date"></DatePicker>
+          </Col>
+          <Icon type="ios-calendar" size="18"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="fx-zhibiao">
+      <fxs></fxs>
+      <div style="height:200px;width:100%;margin:0 0 0 10px;">
+        <div class="fxzhibiaohome">
+          <p>
+            指标趋势图(
+            <label>平台业务发展用户数</label>)
+          </p>
+          <img :src="biao" alt>
+        </div>
+        <example style="height:100%;width:100%;"></example>
+      </div>
+    </div>
+
+    <fazhang></fazhang>
   </div>
 </template>
 
 <script>
+import biao from "@/assets/images/nav_icon05.png";
 import { mapMutations } from "vuex";
 import InforCard from "_c/info-card";
 import CountTo from "_c/count-to";
 import { ChartPie, ChartBar } from "_c/charts";
 import Example from "./example.vue";
+import fxs from "../component/qiyefx";
+import fazhang from "../component/zhibiao";
+
 export default {
   name: "home",
   components: {
@@ -48,10 +57,13 @@ export default {
     CountTo,
     ChartPie,
     ChartBar,
-    Example
+    Example,
+    fxs,
+    fazhang
   },
   data() {
     return {
+      biao: biao,
       inforCardData: [
         {
           title: "新增用户",
@@ -91,7 +103,22 @@ export default {
         Sat: 1322,
         Sun: 1324
       },
-      navtop: ["工作台"]
+      navtop: ["工作台", "月关键指标", "用户质量", "业绩合同", "专项活动"],
+      cityList: [
+        {
+          value: "New York",
+          label: "New York"
+        },
+        {
+          value: "London",
+          label: "London"
+        },
+        {
+          value: "Sydney",
+          label: "Sydney"
+        }
+      ],
+      model1: ""
     };
   },
   mounted() {
@@ -104,8 +131,68 @@ export default {
 </script>
 
 <style lang="less">
+.displa {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  font-size: 14px;
+  font-weight: 500;
+}
 .meizhao {
-  margin-top: 20px;
+  background-color: #ffffff;
+  .meizhao-zhibaio {
+    height: 55px;
+    width: 96%;
+    margin: 0 auto 10px;
+    padding: 15px 0;
+    border-bottom: 1px solid #f2f2f2;
+    .zhibiao-l {
+      float: left;
+      .zhibiao-l-f {
+        .displa;
+        .zhi-shu {
+          margin-right: 10px;
+        }
+        label {
+          margin-right: 10px;
+        }
+      }
+    }
+    .zhibiao-r {
+      float: right;
+      .zhibiao-l-f {
+        .displa;
+        .zhi-rl {
+          margin: 0 10px;
+        }
+      }
+    }
+  }
+  .fx-zhibiao {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    .fxzhibiaohome {
+      margin-bottom: 10px;
+      background-image: url("../../../assets/images/nav_icon04.png");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-color: #c40002;
+      height: 40px;
+      p {
+        float: left;
+        color: #ffffff;
+        margin: 11px 0 0 50px;
+        label {
+          color: #ecbf00;
+        }
+      }
+      img {
+        float: right;
+        margin: 11px 20px 0 0;
+      }
+    }
+  }
 }
 .count-style {
   font-size: 50px;
